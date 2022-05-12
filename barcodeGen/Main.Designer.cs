@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.metroSetPanel1 = new MetroSet_UI.Controls.MetroSetPanel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnStartGenerateBarcode = new System.Windows.Forms.Button();
             this.MainPanel = new MetroSet_UI.Controls.MetroSetPanel();
             this.metroSetPanel3 = new MetroSet_UI.Controls.MetroSetPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rdiocodeEAN8 = new MetroSet_UI.Controls.MetroSetRadioButton();
+            this.rdiocodeEAN13 = new MetroSet_UI.Controls.MetroSetRadioButton();
             this.rdiocode39 = new MetroSet_UI.Controls.MetroSetRadioButton();
             this.rdiocode128 = new MetroSet_UI.Controls.MetroSetRadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -137,6 +140,8 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.rdiocodeEAN8);
+            this.groupBox2.Controls.Add(this.rdiocodeEAN13);
             this.groupBox2.Controls.Add(this.rdiocode39);
             this.groupBox2.Controls.Add(this.rdiocode128);
             this.groupBox2.Location = new System.Drawing.Point(200, 100);
@@ -147,6 +152,50 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "barcode Type";
+            // 
+            // rdiocodeEAN8
+            // 
+            this.rdiocodeEAN8.BackgroundColor = System.Drawing.Color.White;
+            this.rdiocodeEAN8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.rdiocodeEAN8.Checked = false;
+            this.rdiocodeEAN8.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.rdiocodeEAN8.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.rdiocodeEAN8.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.rdiocodeEAN8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdiocodeEAN8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rdiocodeEAN8.Group = 0;
+            this.rdiocodeEAN8.IsDerivedStyle = true;
+            this.rdiocodeEAN8.Location = new System.Drawing.Point(8, 79);
+            this.rdiocodeEAN8.Name = "rdiocodeEAN8";
+            this.rdiocodeEAN8.Size = new System.Drawing.Size(184, 17);
+            this.rdiocodeEAN8.Style = MetroSet_UI.Enums.Style.Light;
+            this.rdiocodeEAN8.StyleManager = null;
+            this.rdiocodeEAN8.TabIndex = 5;
+            this.rdiocodeEAN8.Text = "EAN8";
+            this.rdiocodeEAN8.ThemeAuthor = "Narwin";
+            this.rdiocodeEAN8.ThemeName = "MetroLite";
+            // 
+            // rdiocodeEAN13
+            // 
+            this.rdiocodeEAN13.BackgroundColor = System.Drawing.Color.White;
+            this.rdiocodeEAN13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.rdiocodeEAN13.Checked = false;
+            this.rdiocodeEAN13.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.rdiocodeEAN13.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.rdiocodeEAN13.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.rdiocodeEAN13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdiocodeEAN13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rdiocodeEAN13.Group = 0;
+            this.rdiocodeEAN13.IsDerivedStyle = true;
+            this.rdiocodeEAN13.Location = new System.Drawing.Point(8, 62);
+            this.rdiocodeEAN13.Name = "rdiocodeEAN13";
+            this.rdiocodeEAN13.Size = new System.Drawing.Size(184, 17);
+            this.rdiocodeEAN13.Style = MetroSet_UI.Enums.Style.Light;
+            this.rdiocodeEAN13.StyleManager = null;
+            this.rdiocodeEAN13.TabIndex = 4;
+            this.rdiocodeEAN13.Text = "EAN13";
+            this.rdiocodeEAN13.ThemeAuthor = "Narwin";
+            this.rdiocodeEAN13.ThemeName = "MetroLite";
             // 
             // rdiocode39
             // 
@@ -169,7 +218,6 @@
             this.rdiocode39.Text = "CODE39";
             this.rdiocode39.ThemeAuthor = "Narwin";
             this.rdiocode39.ThemeName = "MetroLite";
-
             // 
             // rdiocode128
             // 
@@ -192,7 +240,6 @@
             this.rdiocode128.Text = "CODE128";
             this.rdiocode128.ThemeAuthor = "Narwin";
             this.rdiocode128.ThemeName = "MetroLite";
-
             // 
             // groupBox1
             // 
@@ -255,6 +302,7 @@
             this.picPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picPreview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picPreview.Image = ((System.Drawing.Image)(resources.GetObject("picPreview.Image")));
             this.picPreview.Location = new System.Drawing.Point(0, 0);
             this.picPreview.Name = "picPreview";
             this.picPreview.Size = new System.Drawing.Size(411, 100);
@@ -282,8 +330,8 @@
             this.AllowResize = false;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderThickness = 2F;
             this.ClientSize = new System.Drawing.Size(604, 449);
-            this.ControlBox = false;
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.btnClose);
             this.Name = "Main";
@@ -291,8 +339,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BarcodeGen";
             this.TextAlign = MetroSet_UI.Enums.TextAlign.Center;
-            this.TextColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ThemeName = "Metro";
+            this.ThemeAuthor = "AAA";
             this.UseSlideAnimation = true;
             this.metroSetPanel1.ResumeLayout(false);
             this.MainPanel.ResumeLayout(false);
@@ -321,5 +368,7 @@
         private MetroSet_UI.Controls.MetroSetPanel metroSetPanel2;
         private PictureBox picPreview;
         private MetroSet_UI.Controls.MetroSetRadioButton rdiocode39;
+        private MetroSet_UI.Controls.MetroSetRadioButton rdiocodeEAN13;
+        private MetroSet_UI.Controls.MetroSetRadioButton rdiocodeEAN8;
     }
 }

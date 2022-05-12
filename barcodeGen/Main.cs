@@ -8,13 +8,14 @@ namespace barcodeGen
         private bool ShowLabel { get; set; } = false;
         public Main()
         {
-            InitializeComponent(); b = new BarcodeLib.Barcode();
+            InitializeComponent();
+            b = new BarcodeLib.Barcode();
         }
 
 
         public Task Save(string barcode)
         {
-            string filename = $"{pathString}\\BarGen-" + barcode + ".PNG";
+            string filename = $"{pathString}\\BarGen-" + barcode + $".{BarcodeLib.SaveTypes.PNG.ToString()}";
 
             b.Encode((BarcodeLib.TYPE)barcodetype, barcode, Color.Black, Color.Transparent, 450, 319);
             if (ShowLabel)
@@ -59,7 +60,7 @@ namespace barcodeGen
         private void BtnExit(object sender, EventArgs e) => Application.Exit();
 
 
-        private void CodeRadio() => barcodetype = rdiocode128.Checked == true ? 31 : rdiocode39.Checked == true ? 13 : 0;
+        private void CodeRadio() => barcodetype = rdiocode128.Checked == true ? 31 : rdiocode39.Checked == true ? 13 : rdiocodeEAN13.Checked == true ? 5 : rdiocodeEAN8.Checked == true ? 6 : 0;
 
         private void chkShowLabel_CheckedChanged(object sender) => ShowLabel = chkShowLabel.Checked;
     }
