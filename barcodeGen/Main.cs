@@ -5,7 +5,7 @@ namespace barcodeGen
         BarcodeLib.Barcode b;
         private string pathString { get; set; }
         private int barcodetype { get; set; }
-        private bool ShowLabel { get; set; } = false;
+        //  private bool ShowLabel { get; set; } = false;
         public Main()
         {
             InitializeComponent();
@@ -18,9 +18,9 @@ namespace barcodeGen
             string filename = $"{pathString}\\BarGen-" + barcode + $".{BarcodeLib.SaveTypes.PNG.ToString()}";
 
             b.Encode((BarcodeLib.TYPE)barcodetype, barcode, Color.Black, Color.Transparent, 450, 319);
-            if (ShowLabel)
+            if (chkingShowLabel())
             {
-                b.IncludeLabel = ShowLabel;
+                b.IncludeLabel = chkingShowLabel();
                 b.LabelFont = new Font(Font, FontStyle.Bold);
             }
             b.SaveImage(filename, BarcodeLib.SaveTypes.PNG);
@@ -32,6 +32,7 @@ namespace barcodeGen
         private void btnStartGenerateBarcode_Click(object sender, EventArgs e)
         {
             CodeRadio();
+            chkingShowLabel();
             using (var fbd = new FolderBrowserDialog())
             {
                 DialogResult result = fbd.ShowDialog();
@@ -62,6 +63,6 @@ namespace barcodeGen
 
         private void CodeRadio() => barcodetype = rdiocode128.Checked == true ? 31 : rdiocode39.Checked == true ? 13 : rdiocodeEAN13.Checked == true ? 5 : rdiocodeEAN8.Checked == true ? 6 : 0;
 
-        private void chkShowLabel_CheckedChanged(object sender) => ShowLabel = chkShowLabel.Checked;
+        private bool chkingShowLabel() => chkShowLabel.Checked;
     }
 }

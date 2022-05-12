@@ -278,7 +278,7 @@
             this.chkShowLabel.Text = "ShowLabel";
             this.chkShowLabel.ThemeAuthor = "Narwin";
             this.chkShowLabel.ThemeName = "MetroLite";
-            this.chkShowLabel.CheckedChanged += new MetroSet_UI.Controls.MetroSetCheckBox.CheckedChangedEventHandler(this.chkShowLabel_CheckedChanged);
+
             // 
             // metroSetPanel2
             // 
