@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup> 
+    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework> 
+    <OutputType>WinExe</OutputType> 
+    <UseWindowsForms>True</UseWindowsForms> 
+    <EnableNETAnalyzers>False</EnableNETAnalyzers> 
+    <RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis> 
+    <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild> 
+    <AnalysisLevel>none</AnalysisLevel> 
+    <StartupObject></StartupObject> 
+    <IsPublishable>False</IsPublishable> 
+    <ImplicitUsings>enable</ImplicitUsings> 
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+    <Deterministic>False</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>False</Optimize>
+    <Deterministic>False</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BarcodeLib" Version="2.4.0" />
+    <PackageReference Include="MetroSet_UI" Version="2.0.0" />
+  </ItemGroup>
+
+</Project>
